@@ -5,18 +5,16 @@ function average(numbers){
     }
     else{
         var sum = 0
-        var noOfNan = 0
+        var noOfNaN= 0 // variable to check number of nan values 
         numbers.forEach(function(number){
             if(!isNaN(number)){
                 sum += number;
             }
             else{
-                noOfNumberNan += 1
+                noOfNaN += 1
             }
         });
-        avg = sum / (numbers.length-noOfNan);
+        avg = sum / (numbers.length-noOfNaN); // if nan values are present, then we need to subtract them from the length of the array
     }
     return avg;
 }
-
-module.exports = {average};
