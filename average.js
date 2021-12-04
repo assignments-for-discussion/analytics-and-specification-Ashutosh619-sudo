@@ -5,7 +5,7 @@ function average(numbers){
     }
     else{
         var sum = 0
-        var noOfNumberNan = 0
+        var noOfNan = 0
         numbers.forEach(function(number){
             if(!isNaN(number)){
                 sum += number;
@@ -14,7 +14,7 @@ function average(numbers){
                 noOfNumberNan += 1
             }
         });
-        avg = sum / (numbers.length-noOfNumberNan);
+        avg = sum / (numbers.length-noOfNan);
     }
     return avg;
 }
