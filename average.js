@@ -18,3 +18,5 @@ function average(numbers){
     }
     return avg;
 }
+
+module.exports = {average};
