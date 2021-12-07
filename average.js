@@ -3,8 +3,9 @@ function average(numbers){
         if(isNaN(number) || number < -50 || number > 80){
             return false;
         }
-
-        return true;
+        else{
+            return true;
+        }
 
     });
 
