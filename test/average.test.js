@@ -16,6 +16,6 @@ it('ignores NaN in the input', ()=> {
 });
 
 it("ignores outliers in the input", ()=> {
-  expect(average([25,22,-80,30,27,92,40,35,105,-5]))
-        .to.be.approximately(24.85, 0.01);
+  expect(average([-50,22,25,95]))
+        .to.be.approximately(23.5, 0.01);
 });
