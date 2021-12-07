@@ -13,6 +13,7 @@ function average(numbers){
                 noOfNaN += 1
             }
         });
+        var avg = 0;
         avg = sum / (numbers.length-noOfNaN); 
         return avg;
     }
