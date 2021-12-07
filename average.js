@@ -1,18 +1,21 @@
 function average(numbers){
-    var result = numbers.filter(function(number){
-        if(!isNaN(number) || (number > -50 && number < 80)){
-            return true;
-        }
-
-    });
-    var sum = 0
-    result.forEach(function(number){
-        sum += number;
-    });
-
-    var avg = sum / result.length;
-
-    return avg;
+    if(numbers.length == 0){
+        return NaN;
+    }
+    else{
+        var sum = 0
+        var noOfNaN= 0
+        numbers.forEach(function(number){
+            if(!isNaN(number) && (number > -50 && number < 80)){
+                sum += number;
+            }
+            else{
+                noOfNaN += 1
+            }
+        });
+        avg = sum / (numbers.length-noOfNaN); 
+        return avg;
+    }
 
 }
 
