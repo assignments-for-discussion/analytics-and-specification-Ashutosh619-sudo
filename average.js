@@ -4,11 +4,7 @@ function average(numbers){
     }
 
     var result = numbers.filter(function(number){
-        if(isNaN(number)){
-            return false;
-        }
-        // outliers below -50 and above 80
-        if(number < -50 || number > 80){
+        if(isNaN(number) || number < -50 || number > 80){
             return false;
         }
 
@@ -16,7 +12,7 @@ function average(numbers){
 
     });
 
-    sum = 0
+    var sum = 0
     result.forEach(function(number){
         sum += number;
     });
