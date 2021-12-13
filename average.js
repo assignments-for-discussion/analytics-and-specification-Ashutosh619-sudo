@@ -1,28 +1,4 @@
-/*function findFilterOutliers(numbers) { 
-
-    var values = numbers.concat();
-
-    values.sort( function(a, b) {
-            return a - b;
-         });
-
-
-    var quartile1 = values[Math.floor((values.length / 4))];
-    var quartile3 = values[Math.ceil(values.length * (3 / 4))-1];
-    var interQaurtileRange = quartile3 - quartile1;
-
-    var maxValue = quartile3 + interQaurtileRange*1.5;
-    var minValue = quartile1 - interQaurtileRange*1.5;
-
-    var filteredValues = values.filter(function(x) {
-        return (x <= maxValue) && (x >= minValue);
-    });
-
-
-    return filteredValues;
-}*/
-
-function getStandardDeviation (array) {
+function getStandardDeviationAndMean (array) {
     const n = array.length
     const mean = array.reduce((a, b) => a + b) / n
     return [
@@ -32,10 +8,10 @@ function getStandardDeviation (array) {
     ]
   }
 
-function findFilterOutliersSTD(numbers){
+function findFilterOutliers(numbers){
 
     var values = numbers.concat();
-    var meanStd = getStandardDeviation(values);
+    var meanStd = getStandardDeviationAndMean(values);
     var mean = meanStd[1];
     var standardDeviation = meanStd[0];
     var cutOff = standardDeviation * 2
@@ -61,7 +37,7 @@ function average(numbers){
         }
     });
 
-    var filtered = findFilterOutliersSTD(result);
+    var filtered = findFilterOutliers(result);
 
     var sum = 0
     filtered.forEach(function(number){
