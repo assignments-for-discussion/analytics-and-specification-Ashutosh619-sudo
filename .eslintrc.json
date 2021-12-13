@@ -14,7 +14,7 @@
     },
     "rules": {
         "linebreak-style": ["off"],
-        "complexity": ["error", {"max": 4}],
+        "complexity": ["error", {"max": 3}],
         "require-jsdoc": ["off"],
         "new-cap": ["off"]
     }
